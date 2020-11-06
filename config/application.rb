@@ -29,5 +29,13 @@ module RunteqNormal
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # 課題1
+    config.generators do |g|
+      g.assets false
+      g.test_framework false
+      g.helper false
+      g.skip_routes true
+    end
   end
 end
