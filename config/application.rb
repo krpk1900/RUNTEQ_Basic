@@ -30,12 +30,15 @@ module RunteqNormal
     # Don't generate system test files.
     config.generators.system_tests = nil
 
-    # 課題1
+    # generatorの設定
     config.generators do |g|
       g.assets false
       g.test_framework false
       g.helper false
       g.skip_routes true
     end
+
+    config.i18n.default_locale = :ja
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
   end
 end
