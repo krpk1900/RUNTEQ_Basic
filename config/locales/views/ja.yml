@@ -1,0 +1,22 @@
+ja:
+  users:
+    new:
+      title: 'ユーザ登録'
+      login_link: 'ログインページへ'
+  user_sessions:
+    new:
+      title: 'ログイン'
+      button_title: 'ログイン'
+      register_link: '登録ページへ'
+      forgot_password: 'パスワードをお忘れの方はこちら'
+  shared:
+    before_login_header:
+      login_link: 'ログイン'
+    header:
+      bookmark_list: 'ブックマーク一覧'
+      character: 'らんてっく　たろう'
+      profile: 'プロフィール'
+      logout: 'ログアウト'
+      board: '掲示板'
+      board_list: '掲示板一覧'
+      make_board: '掲示板作成'
