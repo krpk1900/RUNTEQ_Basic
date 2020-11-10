@@ -12,11 +12,11 @@
       <ul class='navbar-nav ml-auto main-nav align-items-center'>
         <li class='nav-item dropdown dropdown-slide'>
           <a href='#' class='nav-link dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-            <%= t '.board' %>
+            <%= Board.model_name.human %>
           </a>
 
           <div class='dropdown-menu dropdown-menu-right'>
-            <%= link_to t('.board_list'), '#', class: 'dropdown-item' %>
+            <%= link_to t('boards.index.title'), boards_path, class: 'dropdown-item' %>
             <%= link_to t('.make_board'), '#', class: 'dropdown-item' %>
           </div>
         </li>
@@ -30,7 +30,7 @@
             <%= image_tag 'sample.jpg', class: 'rounded-circle mr15', width: '40', height: '40' %>
           </a>
           <div class='dropdown-menu dropdown-menu-right'>
-            <div class='dropdown-item'><%= t '.character' %></div>
+            <div class='dropdown-item'><%= current_user.decorate.full_name %></div>
             <div class='dropdown-divider'></div>
             <%= link_to  t('.profile'), '#', class: 'dropdown-item' %>
             <%= link_to t('defaults.logout'), logout_path, class: 'dropdown-item', method: "delete" %>

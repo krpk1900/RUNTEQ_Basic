@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
   private
 
   def not_authenticated
-    redirect_to login_url, alert: 'Please login first'
+    redirect_to login_url, warning: t('defaults.message.require_login')
   end
 end
