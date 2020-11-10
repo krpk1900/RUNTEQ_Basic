@@ -1,9 +1,11 @@
 <div class="col-sm-12 col-lg-4 mb-3">
-  <div id= <%= board.id %>>
+  <div id="board-id-<%= board.id %>">
     <div class="card"><img class="card-img-top" src="/assets/board_placeholder.png" width="300" height="200"/>
       <div class="card-body">
         <h4 class="card-title">
-          <a href="#"><%= board.title %></a>
+          <a href="#">
+            <%= board.title %>
+          </a>
         </h4>
         <div class='mr10 float-right'>
           <%= link_to '#', id: 'button-edit-#{board.id}' do %>
@@ -17,7 +19,7 @@
           <li class="list-inline-item"><i class="far fa-user"></i> <%= board.user.decorate.full_name %></li>
           <li class="list-inline-item"><i class="far fa-calendar"></i><%= l board.created_at, format: :long %></li>
         </ul>
-        <p class="card-text"> <%= board.body %></p>
+        <p class="card-text"><%= board.body %></p>
       </div>
     </div>
   </div>
