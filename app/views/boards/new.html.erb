@@ -11,13 +11,8 @@
           <%= f.label :body, '本文'%>
           <%= f.text_area :body, class: "form-control", id: "board_body" %>
         </div>
-        <%= f.submit '作成', class: "btn btn-primary" %>
+        <%= f.submit '登録する', class: "btn btn-primary" %>
       <% end %>
-      <div class="form-group">
-        <label for="board_body">本文</label>
-        <textarea class="form-control" row="10" style="height: 200px" name="board[body]" id="board_body"></textarea>
-      </div>
-      <input type="submit" name="commit" value="作成" class="btn btn-primary" data-disable-with="作成" />
     </div>
   </div>
 </div>
