@@ -1,2 +1,18 @@
-<h1>Boards#new</h1>
-<p>Find me in app/views/boards/new.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <h1><%= t('.title') %></h1>
+      <%= form_with model: @board, local: true do |f| %>
+        <div class="form-group">
+          <%= f.label :title, 'タイトル'%>
+          <%= f.text_field :title, class: "form-control", id: "board_title" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :body, '本文'%>
+          <%= f.text_area :body, class: "form-control", id: "board_body" %>
+        </div>
+        <%= f.submit '登録する', class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
