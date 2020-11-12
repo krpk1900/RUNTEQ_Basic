@@ -38,6 +38,7 @@ gem 'sorcery'
 gem 'pry-byebug'
 gem 'rails-i18n', '~> 5.1'
 gem 'draper'
+gem 'carrierwave' # 画像のアップロード機能
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
