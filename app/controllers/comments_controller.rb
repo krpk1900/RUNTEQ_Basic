@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
       redirect_to board_path(id: @board.id), success: t('defaults.message.created', item: Comment.model_name.human)
     else
       flash.now[:danger] = t('defaults.message.not_created', item: Comment.model_name.human)
-      render 'comments/show'
+      render 'boards/show'
     end
   end
 
