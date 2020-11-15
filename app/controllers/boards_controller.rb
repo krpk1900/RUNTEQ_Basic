@@ -1,6 +1,6 @@
 class BoardsController < ApplicationController
   # skip_before_action :require_login
-before_action :permitted?, only: %i[edit]
+  before_action :permitted?, only: %i[edit]
 
   def new
     @board = Board.new
@@ -48,8 +48,6 @@ before_action :permitted?, only: %i[edit]
   end
 
   def permitted?
-    unless (current_user == Board.find(params[:id]).user.id)
-      raise ActionController::RoutingError.new('Not Found')
-    end
+    render status: 404 if current_user.id != Board.find(params[:id]).user.id
   end
 end
