@@ -36,6 +36,7 @@ class BoardsController < ApplicationController
     else
       flash.now[:danger] = t('.fail')
       render :edit
+    end
   end
 
   def destroy
