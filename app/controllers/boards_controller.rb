@@ -30,8 +30,8 @@ class BoardsController < ApplicationController
   end
 
   def update
-    board = current_user.boards.find(params[:id])
-    if board.update!(board_params)
+    @board = current_user.boards.find(params[:id])
+    if @board.update(board_params)
       redirect_to board_path, success: t('.success')
     else
       flash.now[:danger] = t('.fail')
