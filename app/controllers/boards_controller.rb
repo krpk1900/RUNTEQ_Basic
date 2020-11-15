@@ -1,5 +1,6 @@
 class BoardsController < ApplicationController
   # skip_before_action :require_login
+
   def new
     @board = Board.new
   end
@@ -22,6 +23,25 @@ class BoardsController < ApplicationController
 
   def index
     @boards = Board.all.includes(:user).order(created_at: :desc)
+  end
+
+  def edit
+    @board = current_user.boards.find(params[:id])
+  end
+
+  def update
+    @board = current_user.boards.find(params[:id])
+    if @board.update(board_params)
+      redirect_to board_path, success: t('.success')
+    else
+      flash.now[:danger] = t('.fail')
+      render :edit
+    end
+  end
+
+  def destroy
+    current_user.boards.find(params[:id]).destroy!
+    redirect_to boards_path, success: t('.success')
   end
 
   private
