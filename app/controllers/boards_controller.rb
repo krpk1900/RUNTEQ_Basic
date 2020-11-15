@@ -1,6 +1,5 @@
 class BoardsController < ApplicationController
   # skip_before_action :require_login
-  before_action :permitted?, only: %i[edit]
 
   def new
     @board = Board.new
@@ -27,7 +26,7 @@ class BoardsController < ApplicationController
   end
 
   def edit
-    @board = Board.find(params[:id])
+    @board = current_user.boards.find(params[:id])
   end
 
   def update
@@ -37,7 +36,7 @@ class BoardsController < ApplicationController
   end
 
   def destroy
-    Board.find(params[:id]).destroy!
+    current_user.boards.find(params[:id]).destroy!
     redirect_to boards_path, success: t('.success')
   end
 
@@ -45,9 +44,5 @@ class BoardsController < ApplicationController
 
   def board_params
     params.require(:board).permit(:title, :body, :board_image, :board_image_cache)
-  end
-
-  def permitted?
-    render status: 404 if current_user.id != Board.find(params[:id]).user.id
   end
 end
