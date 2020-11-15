@@ -1,5 +1,7 @@
 class BoardsController < ApplicationController
   # skip_before_action :require_login
+before_action :permitted?, only: %i[edit]
+
   def new
     @board = Board.new
   end
@@ -24,9 +26,30 @@ class BoardsController < ApplicationController
     @boards = Board.all.includes(:user).order(created_at: :desc)
   end
 
+  def edit
+    @board = Board.find(params[:id])
+  end
+
+  def update
+    board = Board.find(params[:id])
+    board.update!(board_params)
+    redirect_to board_path, success: t('.success')
+  end
+
+  def destroy
+    Board.find(params[:id]).destroy!
+    redirect_to boards_path, success: t('.success')
+  end
+
   private
 
   def board_params
     params.require(:board).permit(:title, :body, :board_image, :board_image_cache)
+  end
+
+  def permitted?
+    unless (current_user == Board.find(params[:id]).user.id)
+      raise ActionController::RoutingError.new('Not Found')
+    end
   end
 end
