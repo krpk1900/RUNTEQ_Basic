@@ -41,6 +41,11 @@ ja:
       title: '掲示板編集'
     bookmarks:
       title: 'ブックマーク一覧'
+  bookmarks:
+    create:
+      bookmark: 'ブックマークしました'
+    destroy:
+      unbookmark: 'ブックマークを外しました'
   profiles:
     show:
       title: 'プロフィール'
