@@ -1,6 +1,4 @@
 class BoardsController < ApplicationController
-  # skip_before_action :require_login
-
   def new
     @board = Board.new
   end
@@ -48,8 +46,6 @@ class BoardsController < ApplicationController
   def bookmarks
     @bookmark_boards = current_user.bookmark_boards.includes(:user).order(created_at: :desc)
   end
-
-
 
   private
 
