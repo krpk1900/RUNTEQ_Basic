@@ -33,11 +33,11 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.5.0'
 gem 'jquery-rails'
-gem 'font-awesome-sass', '~> 5.15.1'
-gem 'sorcery'
-gem 'pry-byebug'
-gem 'rails-i18n', '~> 5.1'
-gem 'draper'
+gem 'font-awesome-sass', '~> 5.15.1' # アイコンをテキストで扱う
+gem 'sorcery' # ログイン機能
+gem 'pry-byebug' # デバッグ
+gem 'rails-i18n', '~> 5.1' # 国際化
+gem 'draper' # Decorator機能
 gem 'carrierwave' # 画像のアップロード機能
 
 group :development, :test do
