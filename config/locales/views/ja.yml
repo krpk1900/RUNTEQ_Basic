@@ -44,9 +44,9 @@ ja:
       no_result: 'ブックマーク中の掲示板がありません'
   bookmarks:
     create:
-      bookmark: 'ブックマークしました'
+      success: 'ブックマークしました'
     destroy:
-      unbookmark: 'ブックマークを外しました'
+      success: 'ブックマークを外しました'
   profiles:
     show:
       title: 'プロフィール'
@@ -54,6 +54,5 @@ ja:
     before_login_header:
       login_link: 'ログイン'
     header:
-      bookmark_list: 'ブックマーク一覧'
       profile: 'プロフィール'
       logout: 'ログアウト'
