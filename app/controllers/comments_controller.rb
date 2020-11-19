@@ -11,8 +11,11 @@ class CommentsController < ApplicationController
   end
 
   def update
-    @comment.update!(comment_update_params)
-    render json: @comment
+    if @comment.update(comment_update_params)
+      render json: @comment
+    else
+      head: :bad_request
+    end
   end
 
   private
