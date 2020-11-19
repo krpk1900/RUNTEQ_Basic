@@ -16,11 +16,11 @@
       <div class="row">
         <% if @boards.present? %>
           <%= render @boards %>
-          <%= paginate @boards %>
         <% else %>
           <p><%= t('.no_result') %><p>
         <% end %>
       </div>
+      <%= paginate @boards %>
     </div>
   </div>
 </div>
