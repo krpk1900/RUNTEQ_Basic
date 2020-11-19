@@ -4,6 +4,7 @@
   </td>
   <td>
     <h3 class="small"><%= comment.user.decorate.full_name %></h3>
+    <p id="js-comment-post-error-<%= comment.id %>" class="text-danger"></p>
     <div id="js-comment-<%= comment.id %>">
       <p><%= simple_format(comment.body) %></p>
     </div>
@@ -23,9 +24,9 @@
           </a>
         </li>
         <li class="list-inline-item">
-          <a href="#" class='js-delete-comment-button' data-comment-id="<%= comment.id %>">
-            <%= icon 'fas', 'trash' %>
-          </a>
+          <%= link_to comment_path(comment), class: 'js-delete-comment-button', method: :delete, data: { confirm: t('defaults.message.delete_confirm')}, remote: true do %>
+            <%= icon 'fa', 'trash' %>
+          <% end %>
         </li>
       </ul>
     </td>
