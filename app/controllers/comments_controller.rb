@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: %i[destroy]
+  before_action :set_comment, only: %i[destroy update]
 
   def create
     @comment = current_user.comments.build(comment_params)
@@ -10,6 +10,11 @@ class CommentsController < ApplicationController
     @comment.destroy!
   end
 
+  def update
+    @comment.update!(comment_update_params)
+    render json: @comment
+  end
+
   private
 
   def set_comment
@@ -18,5 +23,9 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:body).merge(board_id: params[:board_id])
+  end
+
+  def comment_update_params
+    params.require(:comment).permit(:body)
   end
 end

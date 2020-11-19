@@ -4,6 +4,7 @@
   </td>
   <td>
     <h3 class="small"><%= comment.user.decorate.full_name %></h3>
+    <p id="js-comment-post-error-<%= comment.id %>" class="text-danger"></p>
     <div id="js-comment-<%= comment.id %>">
       <p><%= simple_format(comment.body) %></p>
     </div>
