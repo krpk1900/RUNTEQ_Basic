@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = current_user.comments.build(comment_params)
-    @comment.save!
+    @comment.save
   end
 
   def destroy
@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
     if @comment.update(comment_update_params)
       render json: @comment
     else
-      render status: 400
+      render status: 422
     end
   end
 
