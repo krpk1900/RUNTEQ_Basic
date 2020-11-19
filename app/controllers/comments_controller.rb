@@ -11,8 +11,10 @@ class CommentsController < ApplicationController
   end
 
   def update
-    @comment.update!(comment_update_params)
-    render json: @comment
+    if @comment.update(comment_update_params)
+      render json: @comment
+    else
+      render status: 400
   end
 
   private
