@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
   end
 
   def update
-    @comment = current_user.comment.find(params[:id])
+    @comment = current_user.comments.find(params[:id])
     if @comment.update(comment_update_params)
       render json: { comment: @comment }, status: :ok
     else
