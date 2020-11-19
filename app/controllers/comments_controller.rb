@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
     if @comment.update(comment_update_params)
       render json: @comment
     else
-      head: :bad_request
+      head :bad_request
     end
   end
 
