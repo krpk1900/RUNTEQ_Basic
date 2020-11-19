@@ -1,8 +1,8 @@
 <div class="row mb-3">
   <div class="col-lg-8 offset-lg-2">
-    <%= form_with model:[board, comment], remote: true do |f| %>
-      <%= render 'shared/error_messages', { object: f.object } %>
+    <%= form_with model: comment, url: [board, comment], id: 'new_comment' do |f| %>
       <div class="form-group">
+        <p id="js-comment-post-error-<%= comment.id %>" class="text-danger"></p>
         <%= f.label :body %>
         <%= f.text_field :body, class: "form-control mb-3", rows: 4 %>
       </div>
