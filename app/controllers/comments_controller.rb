@@ -15,6 +15,7 @@ class CommentsController < ApplicationController
       render json: @comment
     else
       render status: 400
+    end
   end
 
   private
