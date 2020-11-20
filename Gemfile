@@ -40,6 +40,7 @@ gem 'rails-i18n', '~> 5.1' # 国際化
 gem 'draper' # Decorator機能
 gem 'carrierwave' # 画像のアップロード機能
 gem 'kaminari' # ページネーション
+gem 'ransack' # 検索機能
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
