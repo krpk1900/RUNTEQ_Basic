@@ -1,13 +1,19 @@
 class ProfilesController < ApplicationController
-  def show; end
+  def show
+    @user = current_user
+  end
 
-  def edit; end
+  def edit
+    @user = current_user
+  end
 
   def update
-    if current_user.update(user_params)
+    @user = current_user
+    if @user.update(user_params)
       redirect_to profile_path, success: t('defaults.message.updated', item: User.model_name.human)
     else
-      redirect_to profile_path, danger: t('defaults.message.not_updated', item: User.model_name.human)
+      flash.now[:danger] = t('defaults.message.not_updated', item: User.model_name.human)
+      render :show#, danger: t('defaults.message.not_updated', item: User.model_name.human)
     end
   end
 
