@@ -5,6 +5,7 @@ ja:
     logout: 'ログアウト'
     post: '投稿'
     search_word: '検索ワード'
+    edit: '編集'
     message:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
@@ -54,10 +55,3 @@ ja:
       title: 'プロフィール'
     edit:
       title: 'プロフィール編集'
-
-  shared:
-    before_login_header:
-      login_link: 'ログイン'
-    header:
-      profile: 'プロフィール'
-      logout: 'ログアウト'
