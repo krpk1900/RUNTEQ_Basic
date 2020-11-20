@@ -13,6 +13,7 @@ ja:
       not_updated: "%{item}を更新できませんでした"
       deleted: "%{item}を削除しました"
       delete_confirm: '削除しますか？'
+      update: '更新する'
   users:
     new:
       title: 'ユーザー登録'
@@ -51,6 +52,9 @@ ja:
   profiles:
     show:
       title: 'プロフィール'
+    edit:
+      title: 'プロフィール編集'
+
   shared:
     before_login_header:
       login_link: 'ログイン'

@@ -10,6 +10,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true, presence: true
   validates :first_name, :last_name, presence: true
   validates :first_name, :last_name, length: { maximum: 255 }
+  mount_uploader :avatar, AvatarUploader
 
   def own?(object)
     id == object.user_id
