@@ -36,7 +36,7 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   # 追記
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.action_mailer.default_url_options = { host: Settings.host }
   config.action_mailer.delivery_method = :letter_opener_web
 
   # Print deprecation notices to the Rails logger.

@@ -41,6 +41,7 @@ gem 'draper' # Decorator機能
 gem 'carrierwave' # 画像のアップロード機能
 gem 'kaminari' # ページネーション
 gem 'ransack' # 検索機能
+gem 'config' # 設定管理
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -64,7 +65,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'letter_opener_web'
+  gem 'letter_opener_web' # メールをWeb上で確認
 end
 
 group :test do
