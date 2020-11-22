@@ -7,6 +7,7 @@ ja:
     search_word: '検索ワード'
     edit: '編集'
     submit: '送信'
+    password_reset: 'パスワードリセット'
     message:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
@@ -65,4 +66,4 @@ ja:
       title: 'パスワードリセット'
     update:
       success: 'パスワードを変更しました'
-      fail: 'パスワードを変更できませんでした'
+      fail: 'パスワードの変更に失敗しました'
