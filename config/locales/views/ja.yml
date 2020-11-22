@@ -6,6 +6,7 @@ ja:
     post: '投稿'
     search_word: '検索ワード'
     edit: '編集'
+    submit: '送信'
     message:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
@@ -55,3 +56,13 @@ ja:
       title: 'プロフィール'
     edit:
       title: 'プロフィール編集'
+  password_resets:
+    new:
+      title: 'パスワードリセット申請'
+    create:
+      success: 'パスワードリセット手順を送信しました'
+    edit:
+      title: 'パスワードリセット'
+    update:
+      success: 'パスワードを変更しました'
+      fail: 'パスワードを変更できませんでした'
