@@ -61,3 +61,8 @@ ja:
       title: 'パスワードリセット申請'
     create:
       success: 'パスワードリセット手順を送信しました'
+    edit:
+      title: 'パスワードリセット'
+    update:
+      success: 'パスワードを変更しました'
+      fail: 'パスワードを変更できませんでした'
