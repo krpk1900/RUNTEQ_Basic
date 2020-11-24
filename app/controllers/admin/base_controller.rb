@@ -13,5 +13,3 @@ class Admin::BaseController < ApplicationController
     redirect_to root_path, warning: t('defaults.message.not_authorized') unless current_user.admin?
   end
 end
-
-end

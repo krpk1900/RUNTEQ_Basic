@@ -17,6 +17,7 @@ ja:
       deleted: "%{item}を削除しました"
       delete_confirm: '削除しますか？'
       update: '更新する'
+      not_authorized: '権限がありません'
   users:
     new:
       title: 'ユーザー登録'
@@ -24,6 +25,19 @@ ja:
     create:
       success: 'ユーザー登録が完了しました'
       fail: 'ユーザー登録に失敗しました'
+  admin:
+    user_sessions:
+      new:
+        title: 'ログイン'
+      create:
+        success: 'ログインしました'
+        fail: 'ログインに失敗しました'
+      destroy:
+        success: 'ログアウトしました'
+    dashboards:
+      index:
+        title: 'ダッシュボード'
+
   user_sessions:
     new:
       title: 'ログイン'
