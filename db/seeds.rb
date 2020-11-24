@@ -1,10 +1,20 @@
+User.create!(
+	first_name: Faker::Name.first_name,
+	last_name: Faker::Name.last_name,
+	email: "admin@example.com",
+	password: "password",
+	password_confirmation: "password",
+	role: 1
+)
+
 30.times do |n|
   User.create!(
 		first_name: Faker::Name.first_name,
 		last_name: Faker::Name.last_name,
 		email: "test#{n+1}@example.com",
 		password: "password",
-		password_confirmation: "password"
+		password_confirmation: "password",
+		role: 0
 	)
 end
 

@@ -1,5 +1,12 @@
 {
-  "name": "runteq_normal",
+  "name": "adminLTE",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "admin-lte": "^3.0.5"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:krpk1900/RUNTEQ_Basic.git",
+  "author": "krpk1900 <krpk1900@gmail.com>",
+  "license": "MIT"
 }
