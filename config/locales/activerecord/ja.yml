@@ -13,6 +13,8 @@ ja:
         password_confirmation: 'パスワード確認'
         full_name: '氏名'
         avatar: 'アバター'
+        role: '権限'
+        created_at: '作成日時'
       board:
         title: 'タイトル'
         body: '本文'
