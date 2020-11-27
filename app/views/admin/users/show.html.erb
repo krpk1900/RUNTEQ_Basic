@@ -1,1 +1,5 @@
 <% content_for(:title, t('.title')) %>
+<%= @user.id %>
+<%= @user.decorate.full_name %>
+<%= @user.role %>
+<%= l @user.created_at, format: :short %>
