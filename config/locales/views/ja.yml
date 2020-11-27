@@ -6,6 +6,7 @@ ja:
     post: '投稿'
     search_word: '検索ワード'
     edit: '編集'
+    delete: '削除'
     submit: '送信'
     password_reset: 'パスワードリセット'
     message:
@@ -43,7 +44,7 @@ ja:
       show:
         title: 'ユーザー詳細'
       edit:
-        tille: 'ユーザー編集'
+        title: 'ユーザー編集'
 
   user_sessions:
     new:
