@@ -37,6 +37,13 @@ ja:
     dashboards:
       index:
         title: 'ダッシュボード'
+    users:
+      index:
+        title: 'ユーザー一覧'
+      show:
+        title: 'ユーザー詳細'
+      edit:
+        tille: 'ユーザー編集'
 
   user_sessions:
     new:

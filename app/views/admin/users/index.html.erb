@@ -1,0 +1,21 @@
+<% content_for(:title, t('.title')) %>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col"><%= User.human_attribute_name :full_name %></th>
+      <th scope="col"><%= User.human_attribute_name :role %></th>
+      <th scope="col"><%= User.human_attribute_name :created_at %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= link_to user.decorate.full_name, admin_user_path(user) %></td>
+        <td><%= user.role %></td>
+        <td><%= l user.created_at, format: :short %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
