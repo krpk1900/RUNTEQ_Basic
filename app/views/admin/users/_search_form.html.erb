@@ -1,0 +1,15 @@
+<%= search_form_for @q, url: url do |f| %>
+  <!-- ここで検索するカラムを指定-->
+  <%= f.condition_fields do |c| %>
+    <%= c.attribute_fields do |a| %>
+      <%= a.attribute_select associations: [] %>
+    <% end %>
+
+    <!-- ここで曖昧検索(cont)を指定。これはc.hidden_field :p, value:を使って絞り込むことが可能-->
+    <%= c.hidden_field :p, value: "cont" %>
+    <%= c.value_fields do |v| %>
+      <%= v.search_field :value, placeholder: '検索ワードを入力' %>
+    <% end %>
+  <% end %>
+  <%= f.submit '検索', class: "btn btn-primary" %>
+<% end %>

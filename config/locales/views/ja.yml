@@ -45,7 +45,9 @@ ja:
         title: 'ユーザー詳細'
       edit:
         title: 'ユーザー編集'
-
+    boards:
+      index:
+        title: '掲示板一覧'
   user_sessions:
     new:
       title: 'ログイン'
