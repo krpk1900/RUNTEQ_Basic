@@ -2,8 +2,12 @@
   <div class="input-group mb-3">
     <%= f.search_field :first_name_or_last_name_cont, class: "form-control", placeholder: t('defaults.search_word') %>
 
-    <%= f.collection_select :role_eq, User.group(:role), :role, :role, :include_blank => '指定なし' %>
+    <%#= f.collection_select :role_eq, User.group(:role), :role, :role, :include_blank => '指定なし' %>
 
+    <div class="field">
+      <%= f.label :role %>
+      <%= f.select :role, User.roles_i18n.keys.map {|k| [User.roles_i18n[k], k]} %>
+    </div>
 
     <div class="input-group-append">
       <%= f.submit '検索', class: "btn btn-primary" %>

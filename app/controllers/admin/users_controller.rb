@@ -4,6 +4,9 @@ class Admin::UsersController < Admin::BaseController
   def index
     @q = User.ransack(params[:q])
     @users = @q.result(distinct: true).order(created_at: :desc)
+
+    binding.pry
+
   end
 
   def show; end
@@ -11,7 +14,8 @@ class Admin::UsersController < Admin::BaseController
   def edit; end
 
   def update
-    if @user.update(user_params)
+    if @user.update(user_params)@q
+
       redirect_to admin_users_path, success: t('defaults.message.updated', item: User.model_name.human)
     else
       flash.now[:danger] = t('defaults.message.not_updated', item: User.model_name.human)

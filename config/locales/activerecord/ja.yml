@@ -22,3 +22,8 @@ ja:
         created_at: '作成日時'
       comment:
         body: 'コメント'
+  enums:
+    user:
+      role:
+        admin: '管理者'
+        general: '一般'

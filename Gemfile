@@ -36,12 +36,13 @@ gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.15.1' # アイコンをテキストで扱う
 gem 'sorcery' # ログイン機能
 gem 'pry-byebug' # デバッグ
-gem 'rails-i18n', '~> 5.1' # 国際化
+gem 'rails-i18n', '~> 5.1' # 多言語化
 gem 'draper' # Decorator機能
 gem 'carrierwave' # 画像のアップロード機能
 gem 'kaminari' # ページネーション
 gem 'ransack' # 検索機能
 gem 'config' # 設定管理
+gem 'enum_help' # enumの多言語化
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
