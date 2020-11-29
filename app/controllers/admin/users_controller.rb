@@ -4,6 +4,9 @@ class Admin::UsersController < Admin::BaseController
   def index
     @q = User.ransack(params[:q])
     @users = @q.result(distinct: true).order(created_at: :desc)
+
+    # binding.pry
+
   end
 
   def show; end
