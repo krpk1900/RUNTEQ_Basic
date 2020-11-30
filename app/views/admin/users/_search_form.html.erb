@@ -5,8 +5,8 @@
     <%#= f.collection_select :role_eq, User.group(:role), :role, :role, :include_blank => '指定なし' %>
 
     <div class="field">
-      <%= f.label :role %>
-      <%= f.select :role, User.roles_i18n.keys.map {|k| [User.roles_i18n[k], k]} %>
+      <%= f.label :role_eq %>
+      <%= f.select :role_eq, User.roles_i18n.invert.map {|key, value| [key, User.roles[value]]} %>
     </div>
 
     <div class="input-group-append">

@@ -30,5 +30,5 @@
   <%= render 'comments/comments', { comments: @comments } %>
 
   <td><%= link_to t('defaults.edit'), edit_admin_board_path(@board), class: "btn btn-success" %></td>
-  <td><%= link_to t('defaults.delete'), admin_board_path(@board), method: :delete, class: "btn btn-danger" %></td>
+  <td><%= link_to t('defaults.delete'), admin_board_path(@board), method: :delete, class: "btn btn-danger", data: { confirm: "削除しますか？" } %></td>
 </div>

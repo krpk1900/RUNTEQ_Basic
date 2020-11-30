@@ -1,5 +1,8 @@
 <% content_for(:title, t('.title')) %>
 <%= @user.id %>
 <%= @user.decorate.full_name %>
-<%= @user.role %>
+<%= @user.role_i18n %>
 <%= l @user.created_at, format: :short %>
+
+<%= link_to t('defaults.edit'), edit_admin_user_path(@user), class: "btn btn-success" %>
+<%= link_to t('defaults.delete'), admin_user_path(@user), method: :delete, class: "btn btn-danger", data: { confirm: "削除しますか？" } %>
