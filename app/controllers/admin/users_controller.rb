@@ -3,7 +3,7 @@ class Admin::UsersController < Admin::BaseController
 
   def index
     @q = User.ransack(params[:q])
-    @users = @q.result(distinct: true).order(created_at: :desc)
+    @users = @q.result(distinct: true).order(created_at: :desc).page(params[:page])
   end
 
   def show; end
@@ -15,7 +15,7 @@ class Admin::UsersController < Admin::BaseController
       redirect_to admin_user_path(@user), success: t('defaults.message.updated', item: User.model_name.human)
     else
       flash.now[:danger] = t('defaults.message.not_updated', item: User.model_name.human)
-      render edit_admin_user_path
+      render :edit
     end
   end
 

@@ -6,6 +6,7 @@ ja:
       comment: 'コメント'
     attributes:
       user:
+        id: 'Id'
         first_name: '名'
         last_name: '姓'
         email: 'メールアドレス'
@@ -16,6 +17,8 @@ ja:
         role: '権限'
         created_at: '作成日時'
       board:
+        id: 'Id'
+        user: '作成者'
         title: 'タイトル'
         body: '本文'
         board_image: 'サムネイル'

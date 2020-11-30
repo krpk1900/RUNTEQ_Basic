@@ -1,14 +1,17 @@
-<%= search_form_for @q, url: url do |f| %>
-  <div class="input-group mb-3">
-    <%= f.search_field :title_or_body_cont, class: "form-control", placeholder: t('defaults.search_word') %>
-
-    <%= f.label :created_at_gteq %>
-    <%= f.text_field :created_at_gteq %>
-    <%= f.label :created_at_lteq_end_of_day %>
-    <%= f.text_field :created_at_lteq_end_of_day %>
-
-    <div class="input-group-append">
-      <%= f.submit '検索', class: "btn btn-primary" %>
+<%= search_form_for @q, url: admin_boards_path do |f| %>
+  <div class="row">
+    <div class="form-inline align-items-center mx-auto">
+      <div class="col-auto">
+        <%= f.search_field :title_or_body_cont, class: 'form-control', placeholder: t('defaults.search_word') %>
+      </div>
+      <div class="col-auto">
+        <%= f.date_field :created_at_gteq, class: 'form-control' %>
+        <span>〜</span>
+        <%= f.date_field :created_at_lteq_end_of_day, class: 'form-control' %>
+      </div>
+      <div class="col-auto">
+        <%= f.submit class: 'btn btn-primary' %>
+      </div>
     </div>
   </div>
 <% end %>
