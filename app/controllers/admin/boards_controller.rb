@@ -17,7 +17,7 @@ class Admin::BoardsController < Admin::BaseController
   def update
     @board = Board.find(params[:id])
     if @board.update(board_params)
-      redirect_to admin_boards_path, success: t('defaults.message.updated', item: Board.model_name.human)
+      redirect_to admin_board_path(@board), success: t('defaults.message.updated', item: Board.model_name.human)
     else
       flash.now[:danger] = t('defaults.message.not_updated', item: Board.model_name.human)
       render edit_admin_boards_path
