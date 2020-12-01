@@ -44,7 +44,7 @@ gem 'ransack' # 検索機能
 gem 'config' # 設定管理
 gem 'enum_help' # enumの多言語化
 gem 'slack-notifier' # slackへの通知
-gem 'exception_notification', :github => 'smartinez87/exception_notification' # 例外通知
+gem 'exception_notification', github: 'smartinez87/exception_notification' # 例外通知
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
