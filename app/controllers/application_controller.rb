@@ -6,14 +6,14 @@ class ApplicationController < ActionController::Base
 
   def error_404(error)
     ExceptionNotifier.notify_exception(error, env: request.env, data: { message: 'your error message' })
-    render file: "#{Rails.root}/public/404.html", layout: false, status: 404
+    render file: Rails.root.join('public/404.html'), layout: false, status: :not_found
   end
 
   def error_500(error)
     logger.error error
     logger.error error.backtrace.join("\n\n")
     ExceptionNotifier.notify_exception(error, env: request.env, data: { message: 'your error message' })
-    render file: "#{Rails.root}/public/500.html", layout: false, status: 500
+    render file: Rails.root.join('public/500.html'), layout: false, status: :internal_server_error
   end
 
   private
