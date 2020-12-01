@@ -4,15 +4,15 @@ class ApplicationController < ActionController::Base
   rescue_from Exception, with: :error_500
   rescue_from ActiveRecord::RecordNotFound, with: :error_404
 
-  def error_404(e)
-    ExceptionNotifier.notify_exception(e, :env => request.env, :data => {:message => "your error message"})
+  def error_404(error)
+    ExceptionNotifier.notify_exception(error, env: request.env, data: { message: 'your error message' })
     render file: "#{Rails.root}/public/404.html", layout: false, status: 404
   end
 
-  def error_500(e)
-    logger.error e
-    logger.error e.backtrace.join("\n\n")
-    ExceptionNotifier.notify_exception(e, :env => request.env, :data => {:message => "your error message"})
+  def error_500(error)
+    logger.error error
+    logger.error error.backtrace.join("\n\n")
+    ExceptionNotifier.notify_exception(error, env: request.env, data: { message: 'your error message' })
     render file: "#{Rails.root}/public/500.html", layout: false, status: 500
   end
 
