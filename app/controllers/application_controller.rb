@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     logger.error error
     logger.error error.backtrace.join("\n")
     ExceptionNotifier.notify_exception(error, env: request.env, data: { message: 'your error message' })
-    render file: Rails.root.join('public' '500.html'), layout: false, status: :internal_server_error
+    render file: Rails.root.join('public', '500.html'), layout: false, status: :internal_server_error
   end
 
   private
