@@ -43,6 +43,6 @@ if Rails.env.production?
     #   http_method: :post
     # }
 
-    config.add_notifier :slack, webhook_url: Rails.application.credentials.secret_url, channel: '#基礎編通知'
+    config.add_notifier :slack, webhook_url: Rails.application.credentials.secret_url, channel: Settings.slack.exception_notification_channel
   end
 end
